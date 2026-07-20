@@ -244,6 +244,42 @@
     font-family: 'DM Mono', monospace;
   }
 
+  /* ── WEB PROJECTS ── */
+  .web-projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 1.5rem; }
+  .web-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 16px; overflow: hidden;
+    transition: all 0.3s; display: flex; flex-direction: column;
+  }
+  .web-card:hover { transform: translateY(-5px); border-color: rgba(124,107,255,0.4); box-shadow: 0 20px 50px rgba(0,0,0,0.35); }
+  .web-card-preview {
+    height: 180px; background: linear-gradient(135deg, #1a1a2e, #16213e);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 3.5rem; position: relative; overflow: hidden;
+  }
+  .web-card-preview::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(124,107,255,0.15), rgba(255,107,157,0.1));
+  }
+  .web-card-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; gap: 0.7rem; }
+  .web-card-body h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; font-weight: 700; color: var(--heading);
+  }
+  .web-card-body p { font-size: 0.88rem; color: var(--muted); line-height: 1.65; flex: 1; }
+  .web-card-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 0.5rem; }
+  .web-stack { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+  .web-live-btn {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    background: rgba(124,107,255,0.12); border: 1px solid rgba(124,107,255,0.3);
+    color: var(--accent); padding: 0.35rem 0.9rem;
+    border-radius: 100px; font-size: 0.78rem; font-weight: 600;
+    text-decoration: none; transition: all 0.2s; white-space: nowrap;
+  }
+  .web-live-btn:hover { background: var(--accent); color: #fff; }
+  .web-live-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent3); animation: pulse 1.5s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.4;} }
+
   /* ── ACHIEVEMENTS ── */
   .achieve-list { display: flex; flex-direction: column; gap: 1.2rem; }
   .achieve-item {
@@ -349,7 +385,8 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
+    <li><a href="#projects">AI Projects</a></li>
+    <li><a href="#web-projects">Web Projects</a></li>
     <li><a href="#achievements">Achievements</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -360,7 +397,7 @@
   <div class="hero-glow glow-purple"></div>
   <div class="hero-glow glow-pink"></div>
   <div class="hero-inner">
-    <div class="hero-tag">B.Tech Information Technology · 2nd Year</div>
+    <div class="hero-tag">B.Tech Information Technology · 3rd Year</div>
     <h1>Hi, I'm<br/><em>Shalini V</em></h1>
     <p class="hero-desc">
       AI/ML enthusiast building intelligent systems that solve real-world problems —
@@ -372,16 +409,16 @@
     </div>
     <div class="hero-stats">
       <div class="stat-item">
-        <h3>8.43<span>/10</span></h3>
+        <h3>8.51<span>/10</span></h3>
         <p>CGPA</p>
       </div>
       <div class="stat-item">
         <h3>30<span>+</span></h3>
-        <p>AI Projects</p>
+        <p>Web Projects</p>
       </div>
       <div class="stat-item">
-        <h3>4<span>+</span></h3>
-        <p>Certifications</p>
+        <h3>10<span>mo</span></h3>
+        <p>IIT Madras Intern</p>
       </div>
       <div class="stat-item">
         <h3>Top<span> 25</span></h3>
@@ -410,8 +447,8 @@
           <p class="degree">B.Tech in Information Technology · Anna University</p>
           <div class="edu-badges">
             <span class="edu-badge badge-green">Expected 2028</span>
-            <span class="edu-badge badge-purple">CGPA 8.43</span>
-            <span class="edu-badge badge-purple">2nd Year</span>
+            <span class="edu-badge badge-purple">CGPA 8.51</span>
+            <span class="edu-badge badge-purple">3rd Year</span>
           </div>
         </div>
       </div>
@@ -450,6 +487,13 @@
           <div>
             <small>GitHub</small>
             <span>Shalini07-IT</span>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">🏛️</div>
+          <div>
+            <small>Internship</small>
+            <span>IIT Madras · PALS · 10 months (2025–2026)</span>
           </div>
         </div>
       </div>
@@ -578,6 +622,71 @@
   </div>
 </section>
 
+<!-- WEB PROJECTS -->
+<section id="web-projects">
+  <div class="section-inner">
+    <p class="section-label">// Web Development · 30+ Projects</p>
+    <h2 class="section-title">Live Web Projects</h2>
+    <div class="web-projects-grid reveal">
+
+      <div class="web-card">
+        <div class="web-card-preview">📄</div>
+        <div class="web-card-body">
+          <h3>Resume Builder</h3>
+          <p>Professional resume creation tool with a clean, responsive UI — letting users build and download polished resumes in seconds.</p>
+          <div class="web-card-footer">
+            <div class="web-stack">
+              <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span>
+            </div>
+            <a href="https://shalini07-it.github.io/resume-builder/" target="_blank" class="web-live-btn">
+              <span class="web-live-dot"></span> Live
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="web-card">
+        <div class="web-card-preview">🎓</div>
+        <div class="web-card-body">
+          <h3>Online Certificate Generator</h3>
+          <p>Generate fully customizable certificates with a clean, intuitive interface — perfect for events, courses, and workshops.</p>
+          <div class="web-card-footer">
+            <div class="web-stack">
+              <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span>
+            </div>
+            <a href="https://shalini07-it.github.io/Online-Certificate-Generator/" target="_blank" class="web-live-btn">
+              <span class="web-live-dot"></span> Live
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="web-card">
+        <div class="web-card-preview">⌨️</div>
+        <div class="web-card-body">
+          <h3>Typing Speed Test</h3>
+          <p>Interactive web app to measure typing speed (WPM) and accuracy in real time — great for improving productivity and practice.</p>
+          <div class="web-card-footer">
+            <div class="web-stack">
+              <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span>
+            </div>
+            <a href="https://shalini07-it.github.io/typing-speed/" target="_blank" class="web-live-btn">
+              <span class="web-live-dot"></span> Live
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:2rem; text-align:center;">
+      <a href="https://github.com/Shalini07-IT" target="_blank" class="btn btn-outline" style="display:inline-flex;">
+        💻 View All 30+ Projects on GitHub →
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ACHIEVEMENTS -->
 <section id="achievements">
   <div class="section-inner">
@@ -587,26 +696,33 @@
       <div class="achieve-item">
         <span class="achieve-num">01</span>
         <div class="achieve-content">
+          <h3>🏛️ Internship — IIT Madras (PALS) · 2025–2026</h3>
+          <p>Completed a 10-month internship at Indian Institute of Technology Madras under the PALS initiative as a Student Leader — working on innovation programs, technical workshops, and leadership activities for engineering students.</p>
+        </div>
+      </div>
+      <div class="achieve-item">
+        <span class="achieve-num">02</span>
+        <div class="achieve-content">
           <h3>PALS Brand Ambassador & Student Leader</h3>
           <p>Represented GRT Institute under the PALS initiative of IIT Madras. Organised and led technical workshops and innovation programs inspiring fellow students.</p>
         </div>
       </div>
       <div class="achieve-item">
-        <span class="achieve-num">02</span>
+        <span class="achieve-num">03</span>
         <div class="achieve-content">
           <h3>PALS Thinkathon – Final Round Participant</h3>
           <p>Selected from partner institutes for a 3-day intensive innovation workshop at Indian Institute of Technology Madras.</p>
         </div>
       </div>
       <div class="achieve-item">
-        <span class="achieve-num">03</span>
+        <span class="achieve-num">04</span>
         <div class="achieve-content">
           <h3>Paper Presentation – INDCON 2026</h3>
           <p>Team shortlisted in the top 25 out of 200+ teams at a national-level paper presentation at Anna University.</p>
         </div>
       </div>
       <div class="achieve-item">
-        <span class="achieve-num">04</span>
+        <span class="achieve-num">05</span>
         <div class="achieve-content">
           <h3>Hackathons & Symposiums</h3>
           <p>Active participant in multiple 24-hour hackathons and technical symposiums, building innovative solutions under tight time pressure.</p>
@@ -650,7 +766,7 @@
       <div class="cert-card">
         <div class="cert-logo">🌐</div>
         <h4>Full Stack Web Dev</h4>
-        <p>Full-Stack Development Course</p>
+        <p>Completed · 30+ Projects Built</p>
       </div>
     </div>
   </div>
